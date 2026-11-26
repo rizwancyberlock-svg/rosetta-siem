@@ -105,7 +105,9 @@ def _yaral_cmp(c: Cmp, ctx: _Ctx) -> str:
         suf = "$" if c.op == "endswith" else ""
         return f"{f} = /{pre}{re_escape(str(v))}{suf}/{nc}"
     if c.op == "regex":
-        return f"{f} = /{re.sub(r'(?<!\\)/', r'\\/', v)}/{nc}"
+        # escape unescaped "/" for the /.../ literal (kept outside the f-string for Python 3.10/3.11)
+        pattern = re.sub(r"(?<!\\)/", r"\\/", v)
+        return f"{f} = /{pattern}/{nc}"
     if c.op == "in":
         parts = [f"{f} = {v_ if isinstance(v_, (int, float)) else _yq(str(v_)) + nc}" for v_ in v]
         return "(" + " or ".join(parts) + ")"
