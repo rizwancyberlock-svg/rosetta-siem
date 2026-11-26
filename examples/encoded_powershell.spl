@@ -1,0 +1,1 @@
+index=wineventlog EventCode=4688 (process_name="powershell.exe" OR process_name="pwsh.exe") process="*-enc*" NOT user="SYSTEM"

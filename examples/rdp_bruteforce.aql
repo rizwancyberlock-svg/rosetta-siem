@@ -1,0 +1,1 @@
+SELECT sourceip, COUNT(*) FROM events WHERE "EventID" = '4625' AND username NOT ILIKE '%$' GROUP BY sourceip HAVING COUNT(*) >= 20 LAST 15 MINUTES

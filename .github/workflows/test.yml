@@ -1,0 +1,39 @@
+name: Test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check out the detection library (conversion-rate test)
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository_owner }}/open-yaral-detections
+          path: open-yaral-detections
+        continue-on-error: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Unit and round-trip tests
+        run: python -m unittest discover -s tests -v
+
+      - name: CLI smoke test
+        run: |
+          python -m rosetta convert --to all examples/encoded_powershell.spl
+          python -m rosetta convert --to all examples/password_spray.kql
+          python -m rosetta convert --to all examples/rdp_bruteforce.aql
+          python -m rosetta convert --to all examples/win_lsass_credential_dump.yaral

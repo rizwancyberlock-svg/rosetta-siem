@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rosetta-siem"
+version = "0.1.0"
+description = "Translate detection queries between Google SecOps YARA-L, Microsoft Sentinel KQL, Splunk SPL and IBM QRadar AQL."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Rizwan Ahmed" }]
+requires-python = ">=3.10"
+keywords = ["siem", "detection-engineering", "yara-l", "kql", "spl", "aql", "sentinel", "splunk", "qradar", "chronicle"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Security",
+]
+
+[project.scripts]
+rosetta = "rosetta.__main__:main"
+
+[tool.setuptools]
+packages = ["rosetta"]
