@@ -193,6 +193,7 @@ The suite includes parse tests for all four languages, cross-language rendering 
 
 | Repo | Role |
 |---|---|
+| [siem-onboarding-kit](https://github.com/rizwancyberlock-svg/siem-onboarding-kit) | Log-source onboarding guides for SecOps, Sentinel, Splunk and QRadar |
 | [open-yaral-detections](https://github.com/rizwancyberlock-svg/open-yaral-detections) | 298 YARA-L detections |
 | [sentinel-kql-detections](https://github.com/rizwancyberlock-svg/sentinel-kql-detections) | 191 validated Sentinel KQL detections |
 | [soc-triage-playbooks](https://github.com/rizwancyberlock-svg/soc-triage-playbooks) | Investigate & respond |
