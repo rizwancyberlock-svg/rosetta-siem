@@ -6,7 +6,7 @@
 
 **YARA-L 2.0 ⇄ KQL ⇄ SPL ⇄ AQL · zero dependencies · honest warnings instead of silent mistranslation**
 
-[![Test](https://github.com/<your-username>/rosetta-siem/actions/workflows/test.yml/badge.svg)](https://github.com/<your-username>/rosetta-siem/actions/workflows/test.yml)
+[![Test](https://github.com/rizwancyberlock-svg/rosetta-siem/actions/workflows/test.yml/badge.svg)](https://github.com/rizwancyberlock-svg/rosetta-siem/actions/workflows/test.yml)
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
 ![Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-green)
@@ -35,7 +35,7 @@ Every SOC that migrates SIEMs, runs two SIEMs, or wants to reuse a community rul
 ## Quick start
 
 ```bash
-git clone https://github.com/<your-username>/rosetta-siem && cd rosetta-siem
+git clone https://github.com/rizwancyberlock-svg/rosetta-siem && cd rosetta-siem
 python -m rosetta convert --to all examples/rdp_bruteforce.aql
 ```
 
@@ -107,7 +107,7 @@ query, warnings = convert(spl_text, "spl", "kql")
 
 ## Battle-tested on a real library
 
-All 237 rules of [open-yaral-detections](https://github.com/<your-username>/open-yaral-detections) were batch-converted to the other three languages ([report](examples/library-conversion-report.md)):
+All 237 rules of [open-yaral-detections](https://github.com/rizwancyberlock-svg/open-yaral-detections) were batch-converted to the other three languages ([report](examples/library-conversion-report.md)):
 
 | Target | Converted | Not convertible |
 |---|---:|---:|
@@ -193,8 +193,8 @@ The suite includes parse tests for all four languages, cross-language rendering 
 
 | Repo | Role |
 |---|---|
-| [open-yaral-detections](https://github.com/<your-username>/open-yaral-detections) | 237 YARA-L detections |
-| [soc-triage-playbooks](https://github.com/<your-username>/soc-triage-playbooks) | Investigate & respond |
+| [open-yaral-detections](https://github.com/rizwancyberlock-svg/open-yaral-detections) | 237 YARA-L detections |
+| [soc-triage-playbooks](https://github.com/rizwancyberlock-svg/soc-triage-playbooks) | Investigate & respond |
 | **rosetta-siem** (you are here) | Translate between SIEMs |
 
 ## Author
