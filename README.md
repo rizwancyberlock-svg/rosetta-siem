@@ -107,13 +107,13 @@ query, warnings = convert(spl_text, "spl", "kql")
 
 ## Battle-tested on a real library
 
-All 298 rules of [open-yaral-detections](https://github.com/rizwancyberlock-svg/open-yaral-detections) were batch-converted to the other three languages ([report](examples/library-conversion-report.md)):
+All 312 rules of [open-yaral-detections](https://github.com/rizwancyberlock-svg/open-yaral-detections) were batch-converted to the other three languages ([report](examples/library-conversion-report.md)):
 
 | Target | Converted | Not convertible |
 |---|---:|---:|
-| KQL | **295 / 298** | 3 |
-| SPL | **295 / 298** | 3 |
-| AQL | **295 / 298** | 3 |
+| KQL | **309 / 312** | 3 |
+| SPL | **309 / 312** | 3 |
+| AQL | **309 / 312** | 3 |
 
 The three rules it refuses are multi-event correlation rules (for example `$fail` followed by `$success`). A single KQL/SPL/AQL query can't express them faithfully, so rosetta says so instead of emitting something subtly wrong.
 
@@ -194,8 +194,8 @@ The suite includes parse tests for all four languages, cross-language rendering 
 | Repo | Role |
 |---|---|
 | [siem-onboarding-kit](https://github.com/rizwancyberlock-svg/siem-onboarding-kit) | Log-source onboarding guides for SecOps, Sentinel, Splunk and QRadar |
-| [open-yaral-detections](https://github.com/rizwancyberlock-svg/open-yaral-detections) | 298 YARA-L detections |
-| [sentinel-kql-detections](https://github.com/rizwancyberlock-svg/sentinel-kql-detections) | 191 validated Sentinel KQL detections |
+| [open-yaral-detections](https://github.com/rizwancyberlock-svg/open-yaral-detections) | 312 YARA-L detections |
+| [sentinel-kql-detections](https://github.com/rizwancyberlock-svg/sentinel-kql-detections) | 208 validated Sentinel KQL detections |
 | [soc-triage-playbooks](https://github.com/rizwancyberlock-svg/soc-triage-playbooks) | Investigate & respond |
 | **rosetta-siem** (you are here) | Translate between SIEMs |
 
